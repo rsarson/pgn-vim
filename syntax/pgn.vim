@@ -98,7 +98,7 @@ syntax region pgnCommentBlock start=/{/ end=/}/
 syntax region pgnCommentSingleLine start=/;/ end=/$/
 
 " FEN (contributed by lonely_@tutanota.com)
-syntax match pgnFEN /\([PNBRQKpnbrqk1-8]\+\)\(\/[PNBRQKpnbrqk1-8]\+\)\{7\} \(w\|b\) \(\-\|K\?Q\?k\?q\?\) \(\-\|[a-h][1-8]\) \(0\?[0-9]\+\) \([0-9]\+\)/ containedin=pgnTagValue,pgnCommentBlock,pgnCommentSingleLine contained
+syntax match pgnFEN /\([PNBRQKpnbrqk1-8]\+\)\(\/[PNBRQKpnbrqk1-8]\+\)\{7\} \(w\|b\) \(\-\|K\?Q\?k\?q\?\) \(\-\|[a-h][36]\) \(0\|[1-9][0-9]*\) \([1-9][0-9]*\)/ containedin=pgnTagValue,pgnCommentBlock,pgnCommentSingleLine contained
 
 " "Wow! Look at all the colours, man!"
 highlight pgnTagName                 cterm=none       ctermfg=darkmagenta
