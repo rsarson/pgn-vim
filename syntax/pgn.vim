@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Portable Game Notation (*.pgn)
 " Maintainer: Ryan Sarson <rsarson@gmail.com>
-" Last Change: 2022-04-30
+" Last Change: 2024-03-27 (testing)
 " Original Author: Charles Ford <ford.charles@gmail.com> 
 "                  http://www.vim.org/scripts/script.php?script_id=677
 " References: PGN-SPEC
@@ -97,6 +97,8 @@ syntax match pgnResult /1-0\|0-1\|1\/2-1\/2\|½-½\|\*/
 syntax region pgnCommentBlock start=/{/ end=/}/
 syntax region pgnCommentSingleLine start=/;/ end=/$/
 
+" FEN (contributed by lonely_@tutanota.com)
+syntax match pgnFEN /\([PNBRQKpnbrqk1-8]\+\)\(\/[PNBRQKpnbrqk1-8]\+\)\{7\} \(w\|b\) \(\-\|K\?Q\?k\?q\?\) \(\-\|[a-h][1-8]\) \(0\?[0-9]\+\) \([0-9]\+\)/ containedin=pgnTagValue,pgnCommentBlock,pgnCommentSingleLine contained
 
 " "Wow! Look at all the colours, man!"
 highlight pgnTagName                 cterm=none       ctermfg=darkmagenta
@@ -119,6 +121,8 @@ highlight pgnResult                  cterm=none       ctermfg=darkmagenta
 highlight pgnCommentBlock            cterm=none       ctermfg=darkgreen
 highlight pgnCommentSingleLine       cterm=none       ctermfg=darkgreen
 
+highlight pgnFEN                     cterm=none       ctermfg=darkred
+
 highlight pgnTagName                 gui=none       guifg=darkmagenta
 highlight pgnTagValue                gui=none       guifg=darkblue
 highlight pgnMoveNumber              gui=none       guifg=brown
@@ -138,3 +142,5 @@ highlight pgnVariation               gui=italic     guifg=darkgrey
 highlight pgnResult                  gui=none       guifg=darkmagenta
 highlight pgnCommentBlock            gui=none       guifg=darkgreen
 highlight pgnCommentSingleLine       gui=none       guifg=darkgreen
+
+highlight pgnFEN                     gui=none       guifg=darkred
